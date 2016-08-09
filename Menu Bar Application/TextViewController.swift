@@ -7,8 +7,10 @@
 //
 
 import Cocoa
+import CloudKit
 
 class TextViewController: NSViewController, NSTextViewDelegate {
+    
     @IBOutlet var customView: NSView!
     @IBOutlet var textView: NSScrollView!
     @IBOutlet var mainView: NSView!
@@ -18,7 +20,9 @@ class TextViewController: NSViewController, NSTextViewDelegate {
     @IBAction func quitButtonPressed(sender: NSButton) {
         NSApp.terminate(self)
     }
-    
+    @IBAction func hideButtonPressed(sender: NSButton) {
+        NSApp.hide(self)
+    }
     @IBAction func logoButtonPressed(sender: NSButton) {
         if popover.shown {
             closePopover(sender)
@@ -28,9 +32,11 @@ class TextViewController: NSViewController, NSTextViewDelegate {
     }
     
     let popover = NSPopover()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do view setup here.
         popover.contentViewController = InfoViewController(nibName: "InfoViewController", bundle: nil)
         logoButton.bordered = false
@@ -40,25 +46,22 @@ class TextViewController: NSViewController, NSTextViewDelegate {
         
         view.layer?.backgroundColor = NSColor.whiteColor().CGColor
         customView.layer?.backgroundColor = NSColor.whiteColor().CGColor
-        //view.layer?.backgroundColor = NSColor(red:0.94, green:0.94, blue:0.94, alpha:1.0).CGColor
-        //customView.layer?.backgroundColor = NSColor(red:0.94, green:0.94, blue:0.94, alpha:1.0).CGColor
-
+        
         if Data.data != "" { realTextView.string = Data.data }
         
     }
     
     func showPopover(sender: AnyObject?) {
-            //popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
-            popover.showRelativeToRect(logoButton.bounds, ofView: logoButton, preferredEdge: NSRectEdge.MinY)
+        //popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+        popover.showRelativeToRect(logoButton.bounds, ofView: logoButton, preferredEdge: NSRectEdge.MinY)
     }
     
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
     }
     
-    func textView(textView: NSTextView, shouldChangeTextInRange affectedCharRange: NSRange, replacementString: String?) -> Bool {
-        Data.data = self.realTextView.textStorage!.string
-        return true
+    @objc func textDidChange(notification: NSNotification) { //Handle the text changes here
+        Data.data = self.realTextView.textStorage!.string //the textView parameter is the textView where text was changed
     }
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15A278b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
@@ -28,8 +28,7 @@
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="3ch-dV-bCF">
                             <rect key="frame" x="6" y="25" width="12" height="12"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="12" id="5zJ-0Q-gM5"/>
-                                <constraint firstAttribute="width" constant="12" id="F0U-LO-QsC"/>
+                                <constraint firstAttribute="width" constant="12" id="NmP-gi-Iat"/>
                             </constraints>
                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="quitButton" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="3Bw-C8-dxg">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -39,17 +38,34 @@
                                 <action selector="quitButtonPressed:" target="-2" id="5co-5Q-PEn"/>
                             </connections>
                         </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="b7b-dF-2MQ">
+                            <rect key="frame" x="25" y="25" width="12" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="djQ-BR-lHw"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="hdieButton" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Jvl-Hc-ykW">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="hideButtonPressed:" target="-2" id="Tb9-a3-hGz"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="3ch-dV-bCF" firstAttribute="top" secondItem="78Y-28-cOL" secondAttribute="top" constant="8" id="LEj-RR-siG"/>
-                        <constraint firstItem="3ch-dV-bCF" firstAttribute="leading" secondItem="78Y-28-cOL" secondAttribute="leading" constant="6" id="yMN-UZ-Ll5"/>
+                        <constraint firstItem="3ch-dV-bCF" firstAttribute="leading" secondItem="78Y-28-cOL" secondAttribute="leading" constant="6" id="7kc-JR-HER"/>
+                        <constraint firstItem="3ch-dV-bCF" firstAttribute="top" secondItem="78Y-28-cOL" secondAttribute="top" constant="8" id="ImB-Xy-tqp"/>
+                        <constraint firstItem="3ch-dV-bCF" firstAttribute="bottom" secondItem="b7b-dF-2MQ" secondAttribute="bottom" id="KtS-qL-LvT"/>
+                        <constraint firstItem="b7b-dF-2MQ" firstAttribute="leading" secondItem="3ch-dV-bCF" secondAttribute="trailing" constant="7" id="LQa-H5-RrR"/>
+                        <constraint firstItem="3ch-dV-bCF" firstAttribute="top" secondItem="b7b-dF-2MQ" secondAttribute="top" id="iJt-1h-9Ta"/>
+                        <constraint firstAttribute="bottom" secondItem="3ch-dV-bCF" secondAttribute="bottom" constant="25" id="reV-Vb-7gh"/>
                     </constraints>
                 </customView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="DFY-Qb-Opc">
                     <rect key="frame" x="161" y="463" width="78" height="29"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="29" id="PO9-Bm-Em2"/>
-                        <constraint firstAttribute="width" constant="78" id="iIs-i3-wat"/>
+                        <constraint firstAttribute="height" constant="29" id="ezI-iw-fnU"/>
+                        <constraint firstAttribute="width" constant="78" id="rFZ-8l-Tyr"/>
                     </constraints>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="logo" imagePosition="only" alignment="center" transparent="YES" imageScaling="proportionallyUpOrDown" inset="2" id="1jo-QG-a6i">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -68,16 +84,14 @@
                             <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dataDetection="YES" dashSubstitution="YES" textReplacement="YES" spellingCorrection="YES" smartInsertDelete="YES" id="oTK-KL-JZB">
                                 <rect key="frame" x="0.0" y="0.0" width="360" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="minSize" width="360" height="427"/>
                                 <size key="maxSize" width="480" height="10000000"/>
                                 <attributedString key="textStorage">
-                                    <fragment content="Welcome to Airnotes!">
+                                    <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -113,16 +127,16 @@ AAAAAAEGA
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="78Y-28-cOL" firstAttribute="centerY" secondItem="DFY-Qb-Opc" secondAttribute="centerY" id="62e-rS-uWi"/>
-                <constraint firstItem="78Y-28-cOL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="AmM-ep-3Em"/>
-                <constraint firstItem="7y1-47-3l8" firstAttribute="top" secondItem="78Y-28-cOL" secondAttribute="bottom" constant="8" symbolic="YES" id="f9D-tw-yj5"/>
-                <constraint firstItem="7y1-47-3l8" firstAttribute="top" secondItem="DFY-Qb-Opc" secondAttribute="bottom" constant="16" id="fss-0E-LRk"/>
-                <constraint firstAttribute="trailing" secondItem="7y1-47-3l8" secondAttribute="trailing" constant="20" symbolic="YES" id="gGs-sj-upO"/>
-                <constraint firstItem="DFY-Qb-Opc" firstAttribute="centerX" secondItem="78Y-28-cOL" secondAttribute="centerX" id="oWV-7v-RbA"/>
-                <constraint firstItem="DFY-Qb-Opc" firstAttribute="centerX" secondItem="7y1-47-3l8" secondAttribute="centerX" id="okC-oX-2Nj"/>
-                <constraint firstAttribute="bottom" secondItem="7y1-47-3l8" secondAttribute="bottom" constant="20" symbolic="YES" id="rgR-1k-o9s"/>
-                <constraint firstItem="7y1-47-3l8" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="s1X-lo-cth"/>
-                <constraint firstItem="78Y-28-cOL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="ykC-Og-qZM"/>
+                <constraint firstItem="7y1-47-3l8" firstAttribute="top" secondItem="DFY-Qb-Opc" secondAttribute="bottom" constant="16" id="0B1-Ug-wSU"/>
+                <constraint firstItem="7y1-47-3l8" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="0az-Gf-Kfg"/>
+                <constraint firstItem="DFY-Qb-Opc" firstAttribute="centerX" secondItem="78Y-28-cOL" secondAttribute="centerX" id="1ii-bM-v5H"/>
+                <constraint firstAttribute="bottom" secondItem="7y1-47-3l8" secondAttribute="bottom" constant="20" symbolic="YES" id="ALU-6h-Mtr"/>
+                <constraint firstItem="78Y-28-cOL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="GOP-gH-2pP"/>
+                <constraint firstItem="DFY-Qb-Opc" firstAttribute="centerX" secondItem="7y1-47-3l8" secondAttribute="centerX" id="LdA-nt-qIL"/>
+                <constraint firstAttribute="trailing" secondItem="7y1-47-3l8" secondAttribute="trailing" constant="20" symbolic="YES" id="bZc-PS-qpn"/>
+                <constraint firstItem="7y1-47-3l8" firstAttribute="top" secondItem="78Y-28-cOL" secondAttribute="bottom" constant="8" symbolic="YES" id="e1m-od-fh2"/>
+                <constraint firstItem="78Y-28-cOL" firstAttribute="centerY" secondItem="DFY-Qb-Opc" secondAttribute="centerY" id="lHm-TE-U0v"/>
+                <constraint firstItem="78Y-28-cOL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="y3J-Ni-1Wj"/>
             </constraints>
             <backgroundFilters>
                 <ciFilter name="CISpotColor">
@@ -148,7 +162,8 @@ AAAAAAEGA
         <userDefaultsController representsSharedInstance="YES" id="DjC-4r-AH3"/>
     </objects>
     <resources>
-        <image name="logo" width="75" height="24"/>
+        <image name="hdieButton" width="25" height="25"/>
+        <image name="logo" width="3603" height="1215"/>
         <image name="quitButton" width="25" height="25"/>
     </resources>
 </document>

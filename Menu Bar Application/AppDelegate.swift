@@ -7,17 +7,26 @@
 //
 
 import Cocoa
+import CloudKit
+import Foundation
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
+    let iCloudKeyStore: NSUbiquitousKeyValueStore? = NSUbiquitousKeyValueStore()
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
     
     func applicationDidFinishLaunching(notification: NSNotification) {
-        read()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(NSUbiquitousKeyValueStoreDidChangeExternallyNotification, object: NSUbiquitousKeyValueStore.defaultStore(), queue: NSOperationQueue.mainQueue()) { (notification) in
+            let ubiquitousKeyValueStore = notification.object as! NSUbiquitousKeyValueStore
+            Data.data = ubiquitousKeyValueStore.objectForKey("note")! as! String
+            ubiquitousKeyValueStore.synchronize()
+        }
+        
         NSApplication.sharedApplication().activateIgnoringOtherApps(false)
         popover.behavior = NSPopoverBehavior.Transient
         
@@ -26,15 +35,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = Selector("togglePopover:")
             button
         }
-        
+        iCloudSetUp()
         popover.contentViewController = TextViewController(nibName: "TextViewController", bundle: nil)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
-        write()
+        saveToiCloud()
+    }
+    
+    func applicationWillHide(notification: NSNotification) {
+        saveToiCloud()
     }
 
+    func togglePopover(sender: AnyObject?) {
+        if popover.shown {
+            closePopover(sender)
+            saveToiCloud()
+        } else {
+            showPopover(sender)
+        }
+    }
+    
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
@@ -45,63 +67,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.performClose(sender)
     }
     
-    func togglePopover(sender: AnyObject?) {
-        if popover.shown {
-            closePopover(sender)
-        } else {
-            showPopover(sender)
+    func iCloudSetUp() {
+        if let savedString = iCloudKeyStore?.stringForKey("note") {
+            Data.data = savedString
+            print(savedString)
         }
     }
     
-    func read() {
-        let file = "/airnotes/file.txt" //this is the file. we will write to and read from it
+    func saveToiCloud() {
+        let iCloudKeyStore: NSUbiquitousKeyValueStore? = NSUbiquitousKeyValueStore()
         
-        if let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-            let path = NSURL(fileURLWithPath: dir).URLByAppendingPathComponent(file)
-            
-            //reading
-            do {
-                let text = try NSString(contentsOfURL: path, encoding: NSUTF8StringEncoding)
-                print(text)
-                Data.data = text as String
-            }
-            catch {/* error handling here */
-                print("reading error")
-            }
-        }
-        
-    }
-    
-    func write() {
-        let file = "/airnotes/file.txt" //this is the file. we will write to and read from it
-        
-        let text = Data.data
-        
-        if let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-            let path = NSURL(fileURLWithPath: dir).URLByAppendingPathComponent(file)
-            
-            //writing
-            do {
-                try text.writeToURL(path, atomically: false, encoding: NSUTF8StringEncoding)
-                print("writing succeeded")
-            }
-            catch {/* error handling here */
-                print("writing error")
-                
-                do {
-                    let manager = NSFileManager.defaultManager()
-                    try manager.createDirectoryAtPath(dir + "/airnotes", withIntermediateDirectories: true, attributes: nil)
-                        print("shouldve created dir")
-                
-                    try text.writeToURL(path, atomically: false, encoding: NSUTF8StringEncoding)
-                } catch {
-                    print("oh god - ")
-                }
-            }
-        }
-        else {
-            print("couldnt find dir i guess")
-        }
+        iCloudKeyStore!.setString(Data.data, forKey: "note")
+        iCloudKeyStore!.synchronize()
     }
 }
 
