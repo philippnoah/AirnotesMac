@@ -8,32 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		334A41C31D56CC750087F41D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334A41C21D56CC750087F41D /* Data.swift */; };
+		338935451D5BCBF000976CE2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338935441D5BCBF000976CE2 /* CloudKit.framework */; };
 		33A1236C1D56609500F66BCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1236B1D56609500F66BCC /* AppDelegate.swift */; };
 		33A1236E1D56609500F66BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A1236D1D56609500F66BCC /* Assets.xcassets */; };
 		33A123711D56609500F66BCC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A1236F1D56609500F66BCC /* MainMenu.xib */; };
+		33C9CA8D1D6C544600E35A9D /* MyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C9CA8C1D6C544600E35A9D /* MyManager.swift */; };
+		33CADC431D6AB660005E3D8E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CADC421D6AB660005E3D8E /* Settings.swift */; };
+		33CADC481D6AB931005E3D8E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CADC471D6AB931005E3D8E /* SettingsViewController.swift */; };
+		33CADC4A1D6AB9B3005E3D8E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CADC491D6AB9B3005E3D8E /* SettingsViewController.xib */; };
 		33D43FD91D5667A40029092C /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D43FD71D5667A40029092C /* TextViewController.swift */; };
 		33D43FDA1D5667A40029092C /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33D43FD81D5667A40029092C /* TextViewController.xib */; };
-		33D43FDD1D5695100029092C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D43FDB1D5695100029092C /* InfoViewController.swift */; };
-		33D43FDE1D5695100029092C /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33D43FDC1D5695100029092C /* InfoViewController.xib */; };
 		33F22FCA1D5A56AD00B88A4C /* LocalDataStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F22FC91D5A56AD00B88A4C /* LocalDataStorageHelper.swift */; };
-		67E29E583A153CFBAAB50842 /* Pods_Menu_Bar_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1A99D5E632B6FD34B34105 /* Pods_Menu_Bar_Application.framework */; };
+		CDE03E9D048A8F28CED11873 /* Pods_Airnotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACC036EECF51804CC901980 /* Pods_Airnotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		334A41C21D56CC750087F41D /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		338935441D5BCBF000976CE2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		33A123681D56609500F66BCC /* Airnotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airnotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A1236B1D56609500F66BCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A1236D1D56609500F66BCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33A123701D56609500F66BCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		33A123721D56609500F66BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33B266711D58110800B16F58 /* Airnotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Airnotes.entitlements; sourceTree = "<group>"; };
+		33C9CA8C1D6C544600E35A9D /* MyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyManager.swift; sourceTree = "<group>"; };
+		33CADC421D6AB660005E3D8E /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		33CADC471D6AB931005E3D8E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		33CADC491D6AB9B3005E3D8E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		33D43FD71D5667A40029092C /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		33D43FD81D5667A40029092C /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
-		33D43FDB1D5695100029092C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		33D43FDC1D5695100029092C /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		33F22FC91D5A56AD00B88A4C /* LocalDataStorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataStorageHelper.swift; sourceTree = "<group>"; };
+		5E12F43975C6A1C297865205 /* Pods-Airnotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airnotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Airnotes/Pods-Airnotes.release.xcconfig"; sourceTree = "<group>"; };
 		6BF8D15529D2D61EDED83EC3 /* Pods-Menu Bar Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menu Bar Application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Menu Bar Application/Pods-Menu Bar Application.debug.xcconfig"; sourceTree = "<group>"; };
-		EF1A99D5E632B6FD34B34105 /* Pods_Menu_Bar_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Menu_Bar_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E86D4F846EBB135BE76B097 /* Pods-Airnotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airnotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Airnotes/Pods-Airnotes.debug.xcconfig"; sourceTree = "<group>"; };
+		DACC036EECF51804CC901980 /* Pods_Airnotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airnotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F322D5E4588CE6B5E052FBAE /* Pods-Menu Bar Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menu Bar Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-Menu Bar Application/Pods-Menu Bar Application.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,7 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E29E583A153CFBAAB50842 /* Pods_Menu_Bar_Application.framework in Frameworks */,
+				338935451D5BCBF000976CE2 /* CloudKit.framework in Frameworks */,
+				CDE03E9D048A8F28CED11873 /* Pods_Airnotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +63,8 @@
 			children = (
 				334A41C21D56CC750087F41D /* Data.swift */,
 				33F22FC91D5A56AD00B88A4C /* LocalDataStorageHelper.swift */,
+				33CADC421D6AB660005E3D8E /* Settings.swift */,
+				33C9CA8C1D6C544600E35A9D /* MyManager.swift */,
 			);
 			name = "Helpers & Models";
 			sourceTree = "<group>";
@@ -83,12 +94,21 @@
 				33A1236B1D56609500F66BCC /* AppDelegate.swift */,
 				33A1236F1D56609500F66BCC /* MainMenu.xib */,
 				334A41C11D56CC5D0087F41D /* Helpers & Models */,
-				33D43FE01D5695250029092C /* Info */,
 				33D43FDF1D5695190029092C /* Text */,
+				33CADC441D6AB8FE005E3D8E /* Settings */,
 				33A1236D1D56609500F66BCC /* Assets.xcassets */,
 				33A123721D56609500F66BCC /* Info.plist */,
 			);
 			path = "Menu Bar Application";
+			sourceTree = "<group>";
+		};
+		33CADC441D6AB8FE005E3D8E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				33CADC471D6AB931005E3D8E /* SettingsViewController.swift */,
+				33CADC491D6AB9B3005E3D8E /* SettingsViewController.xib */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		33D43FDF1D5695190029092C /* Text */ = {
@@ -100,20 +120,13 @@
 			name = Text;
 			sourceTree = "<group>";
 		};
-		33D43FE01D5695250029092C /* Info */ = {
-			isa = PBXGroup;
-			children = (
-				33D43FDB1D5695100029092C /* InfoViewController.swift */,
-				33D43FDC1D5695100029092C /* InfoViewController.xib */,
-			);
-			name = Info;
-			sourceTree = "<group>";
-		};
 		D171F0CDBC4235EB93E8461C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				6BF8D15529D2D61EDED83EC3 /* Pods-Menu Bar Application.debug.xcconfig */,
 				F322D5E4588CE6B5E052FBAE /* Pods-Menu Bar Application.release.xcconfig */,
+				8E86D4F846EBB135BE76B097 /* Pods-Airnotes.debug.xcconfig */,
+				5E12F43975C6A1C297865205 /* Pods-Airnotes.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -121,7 +134,8 @@
 		F3E115C2DFBD674CD2CBF9B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EF1A99D5E632B6FD34B34105 /* Pods_Menu_Bar_Application.framework */,
+				338935441D5BCBF000976CE2 /* CloudKit.framework */,
+				DACC036EECF51804CC901980 /* Pods_Airnotes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,8 +212,8 @@
 			files = (
 				33D43FDA1D5667A40029092C /* TextViewController.xib in Resources */,
 				33A1236E1D56609500F66BCC /* Assets.xcassets in Resources */,
-				33D43FDE1D5695100029092C /* InfoViewController.xib in Resources */,
 				33A123711D56609500F66BCC /* MainMenu.xib in Resources */,
+				33CADC4A1D6AB9B3005E3D8E /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Menu Bar Application/Pods-Menu Bar Application-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Airnotes/Pods-Airnotes-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F14AC6C1B35BCE4302084B6C /* [CP] Copy Pods Resources */ = {
@@ -248,7 +262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Menu Bar Application/Pods-Menu Bar Application-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Airnotes/Pods-Airnotes-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -258,11 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CADC431D6AB660005E3D8E /* Settings.swift in Sources */,
 				33F22FCA1D5A56AD00B88A4C /* LocalDataStorageHelper.swift in Sources */,
 				33A1236C1D56609500F66BCC /* AppDelegate.swift in Sources */,
-				33D43FDD1D5695100029092C /* InfoViewController.swift in Sources */,
 				33D43FD91D5667A40029092C /* TextViewController.swift in Sources */,
 				334A41C31D56CC750087F41D /* Data.swift in Sources */,
+				33C9CA8D1D6C544600E35A9D /* MyManager.swift in Sources */,
+				33CADC481D6AB931005E3D8E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +380,7 @@
 		};
 		33A123761D56609500F66BCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BF8D15529D2D61EDED83EC3 /* Pods-Menu Bar Application.debug.xcconfig */;
+			baseConfigurationReference = 8E86D4F846EBB135BE76B097 /* Pods-Airnotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Airnotes.entitlements;
@@ -380,7 +396,7 @@
 		};
 		33A123771D56609500F66BCC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F322D5E4588CE6B5E052FBAE /* Pods-Menu Bar Application.release.xcconfig */;
+			baseConfigurationReference = 5E12F43975C6A1C297865205 /* Pods-Airnotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Airnotes.entitlements;

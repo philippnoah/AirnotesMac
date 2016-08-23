@@ -8,10 +8,11 @@
         <customObject id="-2" userLabel="File's Owner" customClass="TextViewController" customModule="Airnotes" customModuleProvider="target">
             <connections>
                 <outlet property="customView" destination="78Y-28-cOL" id="z56-RM-w4Y"/>
+                <outlet property="hideButton" destination="3ch-dV-bCF" id="VgW-TB-yii"/>
                 <outlet property="logoButton" destination="DFY-Qb-Opc" id="H5w-0P-P9i"/>
                 <outlet property="mainView" destination="Hz6-mo-xeY" id="7Bc-40-CAT"/>
-                <outlet property="quitButton" destination="3ch-dV-bCF" id="EMn-z3-zjH"/>
                 <outlet property="realTextView" destination="oTK-KL-JZB" id="TwE-Co-pVe"/>
+                <outlet property="settingsButton" destination="pcr-ef-U7R" id="vh2-ij-74M"/>
                 <outlet property="textView" destination="7y1-47-3l8" id="dpz-Va-ag2"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -25,40 +26,44 @@
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="78Y-28-cOL">
                     <rect key="frame" x="0.0" y="455" width="400" height="45"/>
                     <subviews>
-                        <button translatesAutoresizingMaskIntoConstraints="NO" id="3ch-dV-bCF">
-                            <rect key="frame" x="6" y="25" width="12" height="12"/>
+                        <button focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-dV-bCF">
+                            <rect key="frame" x="6" y="25" width="15" height="15"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="12" id="NmP-gi-Iat"/>
+                                <constraint firstAttribute="width" constant="15" id="NmP-gi-Iat"/>
                             </constraints>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="quitButton" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="3Bw-C8-dxg">
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="quitButton" imagePosition="overlaps" alignment="center" focusRingType="none" imageScaling="proportionallyUpOrDown" inset="2" id="3Bw-C8-dxg">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="quitButtonPressed:" target="-2" id="5co-5Q-PEn"/>
+                                <action selector="hideButtonPressed:" target="-2" id="wgJ-3s-X65"/>
                             </connections>
                         </button>
-                        <button translatesAutoresizingMaskIntoConstraints="NO" id="b7b-dF-2MQ">
-                            <rect key="frame" x="25" y="25" width="12" height="12"/>
+                        <popUpButton focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="pcr-ef-U7R">
+                            <rect key="frame" x="369" y="19" width="33" height="26"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="12" id="djQ-BR-lHw"/>
+                                <constraint firstAttribute="width" constant="29" id="gQW-iJ-PFK"/>
                             </constraints>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="hdieButton" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Jvl-Hc-ykW">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <popUpButtonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" focusRingType="none" inset="2" pullsDown="YES" arrowPosition="noArrow" preferredEdge="minX" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="P8V-MB-cqG" id="hib-6e-0IC">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="hideButtonPressed:" target="-2" id="Tb9-a3-hGz"/>
-                            </connections>
-                        </button>
+                                <menu key="menu" autoenablesItems="NO" id="wUc-DI-TYs">
+                                    <items>
+                                        <menuItem image="settingsIcon" hidden="YES" id="P8V-MB-cqG"/>
+                                        <menuItem title="Item 2" id="2Cl-LW-pww"/>
+                                        <menuItem title="Item 3" id="0FU-O9-QII"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                        </popUpButton>
                     </subviews>
                     <constraints>
                         <constraint firstItem="3ch-dV-bCF" firstAttribute="leading" secondItem="78Y-28-cOL" secondAttribute="leading" constant="6" id="7kc-JR-HER"/>
-                        <constraint firstItem="3ch-dV-bCF" firstAttribute="top" secondItem="78Y-28-cOL" secondAttribute="top" constant="8" id="ImB-Xy-tqp"/>
-                        <constraint firstItem="3ch-dV-bCF" firstAttribute="bottom" secondItem="b7b-dF-2MQ" secondAttribute="bottom" id="KtS-qL-LvT"/>
-                        <constraint firstItem="b7b-dF-2MQ" firstAttribute="leading" secondItem="3ch-dV-bCF" secondAttribute="trailing" constant="7" id="LQa-H5-RrR"/>
-                        <constraint firstItem="3ch-dV-bCF" firstAttribute="top" secondItem="b7b-dF-2MQ" secondAttribute="top" id="iJt-1h-9Ta"/>
+                        <constraint firstItem="3ch-dV-bCF" firstAttribute="top" secondItem="78Y-28-cOL" secondAttribute="top" constant="5" id="ImB-Xy-tqp"/>
+                        <constraint firstItem="pcr-ef-U7R" firstAttribute="top" secondItem="78Y-28-cOL" secondAttribute="top" constant="2" id="YRC-34-Yvl"/>
+                        <constraint firstAttribute="trailing" secondItem="pcr-ef-U7R" secondAttribute="trailing" id="mXL-Eq-dYc"/>
                         <constraint firstAttribute="bottom" secondItem="3ch-dV-bCF" secondAttribute="bottom" constant="25" id="reV-Vb-7gh"/>
+                        <constraint firstItem="pcr-ef-U7R" firstAttribute="centerY" secondItem="3ch-dV-bCF" secondAttribute="centerY" id="tKM-2F-Rd7"/>
                     </constraints>
                 </customView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="DFY-Qb-Opc">
@@ -75,7 +80,7 @@
                         <action selector="logoButtonPressed:" target="-2" id="BKq-PM-mHk"/>
                     </connections>
                 </button>
-                <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-47-3l8">
+                <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-47-3l8">
                     <rect key="frame" x="20" y="20" width="360" height="427"/>
                     <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="ZY5-8J-3l4">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="427"/>
@@ -120,8 +125,8 @@ AAAAAAEGA
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2b4-Ci-K6r">
-                        <rect key="frame" x="344" y="0.0" width="16" height="427"/>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2b4-Ci-K6r">
+                        <rect key="frame" x="-100" y="-100" width="16" height="427"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -162,8 +167,8 @@ AAAAAAEGA
         <userDefaultsController representsSharedInstance="YES" id="DjC-4r-AH3"/>
     </objects>
     <resources>
-        <image name="hdieButton" width="25" height="25"/>
         <image name="logo" width="3603" height="1215"/>
-        <image name="quitButton" width="25" height="25"/>
+        <image name="quitButton" width="15" height="15"/>
+        <image name="settingsIcon" width="12" height="12"/>
     </resources>
 </document>

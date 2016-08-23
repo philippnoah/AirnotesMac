@@ -1,0 +1,6 @@
+framework module Pods_Airnotes {
+  umbrella header "Pods-Airnotes-umbrella.h"
+
+  export *
+  module * { export * }
+}
