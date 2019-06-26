@@ -10,9 +10,11 @@ import Cocoa
 
 class NoteViewController: NSViewController {
 
+    @IBOutlet weak var TextView: NSScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
     }
     
 }
