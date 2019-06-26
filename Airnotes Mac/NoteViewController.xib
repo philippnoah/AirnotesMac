@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NoteViewController" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="NoteViewController" customModule="Airnotes_Mac" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -12,8 +13,107 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="QW8-EJ-MlJ">
+                    <rect key="frame" x="0.0" y="455" width="400" height="45"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ouT-7a-QHp" userLabel="Hide Button">
+                            <rect key="frame" x="6" y="25" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="KsI-Fx-t4J"/>
+                                <constraint firstAttribute="height" constant="15" id="Lmk-wq-taz"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="quitButton" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="QGj-Yr-GmK">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="Bji-Ju-gYU" userLabel="Settings Button">
+                            <rect key="frame" x="369" y="20" width="33" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="29" id="eYb-H3-avl"/>
+                            </constraints>
+                            <popUpButtonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" inset="2" pullsDown="YES" arrowPosition="noArrow" preferredEdge="minX" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="5e6-zo-iXs" id="e5Q-7A-q9h">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" autoenablesItems="NO" id="t8W-C9-I6r">
+                                    <items>
+                                        <menuItem state="on" image="settingsIcon" hidden="YES" id="5e6-zo-iXs"/>
+                                        <menuItem title="Item 2" id="IfA-Ic-1pT"/>
+                                        <menuItem title="Item 3" id="5pw-kq-SyQ"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                        </popUpButton>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eTZ-iy-1MU">
+                            <rect key="frame" x="161" y="8" width="78" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="IMh-iz-Py1"/>
+                                <constraint firstAttribute="width" constant="78" id="QAq-L8-am0"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="logo" imagePosition="only" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="Mbw-S6-QcE">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="2un-Q4-ntb"/>
+                        <constraint firstItem="ouT-7a-QHp" firstAttribute="leading" secondItem="QW8-EJ-MlJ" secondAttribute="leading" constant="6" id="5h4-qp-cQY"/>
+                        <constraint firstAttribute="trailing" secondItem="Bji-Ju-gYU" secondAttribute="trailing" id="DWB-MN-Lgy"/>
+                        <constraint firstAttribute="width" constant="400" id="GV9-ey-nE5"/>
+                        <constraint firstItem="Bji-Ju-gYU" firstAttribute="top" secondItem="QW8-EJ-MlJ" secondAttribute="top" constant="2" id="I5G-Gz-E0g"/>
+                        <constraint firstAttribute="bottom" secondItem="ouT-7a-QHp" secondAttribute="bottom" constant="25" id="Tqb-fA-0d0"/>
+                        <constraint firstItem="ouT-7a-QHp" firstAttribute="top" secondItem="QW8-EJ-MlJ" secondAttribute="top" constant="5" id="ZIg-VX-g3Y"/>
+                        <constraint firstItem="eTZ-iy-1MU" firstAttribute="centerX" secondItem="QW8-EJ-MlJ" secondAttribute="centerX" id="dBE-He-aKM"/>
+                        <constraint firstItem="eTZ-iy-1MU" firstAttribute="centerY" secondItem="QW8-EJ-MlJ" secondAttribute="centerY" id="ecB-98-eKe"/>
+                        <constraint firstItem="Bji-Ju-gYU" firstAttribute="centerY" secondItem="ouT-7a-QHp" secondAttribute="centerY" id="ypu-3V-CCf"/>
+                    </constraints>
+                </customView>
+                <scrollView appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCL-cw-LfB">
+                    <rect key="frame" x="20" y="20" width="360" height="427"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="puF-cR-kg0">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="427"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="CVR-0i-RP5">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="427"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="minSize" width="360" height="427"/>
+                                <size key="maxSize" width="360" height="10000000"/>
+                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="w6w-Kc-ODJ">
+                        <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="pUK-xn-iJP">
+                        <rect key="frame" x="344" y="0.0" width="16" height="427"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pCL-cw-LfB" secondAttribute="trailing" constant="20" symbolic="YES" id="1ud-Og-gKY"/>
+                <constraint firstItem="pCL-cw-LfB" firstAttribute="top" secondItem="QW8-EJ-MlJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Mvy-eg-bAb"/>
+                <constraint firstItem="pCL-cw-LfB" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="TZq-Um-jlw"/>
+                <constraint firstItem="pCL-cw-LfB" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="XgW-8J-9aH"/>
+                <constraint firstAttribute="trailing" secondItem="QW8-EJ-MlJ" secondAttribute="trailing" id="f4b-p3-Ko8"/>
+                <constraint firstItem="QW8-EJ-MlJ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="fd8-cp-VPA"/>
+                <constraint firstAttribute="bottom" secondItem="pCL-cw-LfB" secondAttribute="bottom" constant="20" symbolic="YES" id="vmj-fD-4VZ"/>
+                <constraint firstItem="QW8-EJ-MlJ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="y6f-Zy-BEw"/>
+            </constraints>
         </customView>
     </objects>
+    <resources>
+        <image name="logo" width="3603" height="1215"/>
+        <image name="quitButton" width="15" height="15"/>
+        <image name="settingsIcon" width="12" height="12"/>
+    </resources>
 </document>
